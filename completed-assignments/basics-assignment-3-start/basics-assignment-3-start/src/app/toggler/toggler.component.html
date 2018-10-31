@@ -1,0 +1,12 @@
+<div class="col-md-3">
+  <input type = "button" [value]="buttonValue" class="btn btn-info" (click)="toggleParagraph($event)">
+</div>
+<!-- <div class = "col-md-9" *ngIf="showParagraph"> -->
+<div class = "col-md-9" [ngStyle] = "{display:getDisplay()}">
+  <p id="below-butt">Secret Password = tuna</p>
+</div>
+<div class="col-md-12" id="log">
+  <li *ngFor = "let t of buttonClicks; index as i" [ngStyle]="{'background-color':getColor(i)}" [ngClass]="{'from-5' : i >= 4}">
+    Click {{t.count}}, Timestamp: {{t.timestamp}}
+  </li>
+</div>
